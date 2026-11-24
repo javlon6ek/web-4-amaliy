@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Urganchdagi «Oltin Qaychi» sartaroshxonasi: xizmatlar, narxlar jadvali va fotogalereya.">
+  <title>Oltin Qaychi sartaroshxonasi — Bosh sahifa</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sahifa boshi va menyu -->
+  <header id="tepa">
+    <nav>
+      <a class="logo" href="index.html">Oltin Qaychi</a>
+      <ul id="menyu">
+        <li><a href="index.html" aria-current="page">Bosh sahifa</a></li>
+        <li><a href="katalog.html">Katalog</a></li>
+        <li><a href="batafsil.html">Biz haqimizda</a></li>
+        <li><a href="aloqa.html">Navbat va aloqa</a></li>
+      </ul>
+      <div class="asboblar">
+        <a class="sevimli-hisob" href="katalog.html#sevimlilar" aria-label="Sevimlilar">&hearts; <span id="sevimli-soni">0</span></a>
+        <button type="button" class="ikon-tugma" id="tema-tugma" aria-label="Tungi rejimga o'tish">&#9790;</button>
+        <button type="button" class="ikon-tugma menyu-tugma" id="menyu-tugma" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="menyu">&#9776;</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Bosh banner -->
+    <section class="hero">
+      <h1>Oltin Qaychi sartaroshxonasi</h1>
+      <p>
+        Urganch shahridagi oilaviy sartaroshxona: erkaklar va bolalar uchun
+        <strong>sifatli, tez va qulay narxda</strong> xizmat.
+      </p>
+      <div class="hero-tugmalar">
+        <a class="tugma" href="aloqa.html#forma">Navbatga yozilish</a>
+        <a class="tugma" href="katalog.html">Xizmatlar katalogi</a>
+      </div>
+    </section>
+
+    <!-- Xizmatlar kartalari -->
+    <section>
+      <h2>Bizning xizmatlarimiz</h2>
+      <div class="kartalar">
+        <article class="karta">
+          <h3>Soch olish</h3>
+          <p>
+            Klassik va zamonaviy erkaklar soch turmaklari. Usta avval siz bilan
+            maslahatlashadi, so'ng <em>sizga mos shaklni</em> tanlaydi.
+          </p>
+        </article>
+        <article class="karta">
+          <h3>Soqol va mo'ylov</h3>
+          <p>
+            Soqolni shakllantirish va ustara bilan tekis olish. Terini
+            tirnamaydigan, yumshoq asboblar ishlatiladi.
+          </p>
+        </article>
+        <article class="karta">
+          <span class="belgi">&minus;20%</span>
+          <h3>Soch + soqol kombo</h3>
+          <p>
+            Ikkala xizmatni birga buyursangiz, umumiy narxdan
+            <mark>20% chegirma</mark> beriladi.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Narxlar jadvali va aside -->
+    <div class="tarkib">
+      <section class="asosiy-qism">
+        <h2>Narxlar</h2>
+        <div class="jadval-orami">
+          <table>
+            <caption>Xizmatlar narxi va davomiyligi (2026-yil)</caption>
+            <thead>
+              <tr>
+                <th scope="col">Toifa</th>
+                <th scope="col">Xizmat</th>
+                <th scope="col">Davomiyligi</th>
+                <th scope="col">Narxi (so'm)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="rowgroup" rowspan="3">Soch</th>
+                <td>Erkaklar soch turmagi</td>
+                <td>30 daqiqa</td>
+                <td class="narx">40&nbsp;000</td>
+              </tr>
+              <tr>
+                <td>Bolalar soch turmagi</td>
+                <td>25 daqiqa</td>
+                <td class="narx">30&nbsp;000</td>
+              </tr>
+              <tr>
+                <td>Mashinkada qisqa olish</td>
+                <td>20 daqiqa</td>
+                <td class="narx">25&nbsp;000</td>
+              </tr>
+              <tr>
+                <th scope="rowgroup" rowspan="2">Soqol</th>
+                <td>Soqolni shakllantirish</td>
+                <td>20 daqiqa</td>
+                <td class="narx">25&nbsp;000</td>
+              </tr>
+              <tr>
+                <td>Ustara bilan olish</td>
+                <td>25 daqiqa</td>
+                <td class="narx">30&nbsp;000</td>
+              </tr>
+              <tr>
+                <th scope="row" colspan="3">Soch + soqol kombo (&minus;20% chegirma)</th>
+                <td class="narx">52&nbsp;000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <aside class="yon">
+        <h2>Ish vaqti</h2>
+        <p>
+          Dushanba – Yakshanba: <strong>09:00 – 20:00</strong>.
+          Qabul vaqti uchun oldindan <a href="aloqa.html#forma">navbatga yoziling</a>.
+        </p>
+      </aside>
+    </div>
+
+    <!-- Rasmlar -->
+    <section>
+      <h2>Fotogalereya</h2>
+      <div class="galereya">
+        <figure>
+          <img src="rasmlar/zal.svg" width="800" height="500"
+               alt="Sartaroshxona zali: ikkita kreslo, katta ko'zgular va sartarosh ustuni">
+          <figcaption>Bizning zal: uchta ish joyi va kutish maydoni.</figcaption>
+        </figure>
+        <figure>
+          <img src="rasmlar/asboblar.svg" width="800" height="500"
+               alt="Sartarosh asboblari: qaychi, taroq va ustara">
+          <figcaption>Har kuni tozalanadigan va dezinfeksiya qilinadigan asboblar.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+  </main>
+
+  <a class="yuqoriga" href="#tepa">&uarr; Yuqoriga</a>
+
+  <!-- Sahifa oxiri -->
+  <footer>
+    <div class="konteyner footer-qator">
+      <div>
+        <p><strong>Oltin Qaychi sartaroshxonasi</strong></p>
+        <p>Urganch shahri, Al-Xorazmiy ko'chasi, 12-uy</p>
+        <p>Har kuni 09:00 – 20:00</p>
+      </div>
+      <div>
+        <p>Telefon: <a href="tel:+998620000000">+998 62 000 00 00</a></p>
+        <p>Pochta: <a href="mailto:info@oltinqaychi.uz">info@oltinqaychi.uz</a></p>
+        <p>&copy; 2026 Barcha huquqlar himoyalangan.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/ui.js"></script>
+</body>
+</html>

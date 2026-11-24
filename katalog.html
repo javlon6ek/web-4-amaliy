@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Oltin Qaychi xizmatlari katalogi: qidiruv, kategoriya filtri, narx bo'yicha saralash va sevimlilar.">
+  <title>Xizmatlar katalogi — Oltin Qaychi sartaroshxonasi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sahifa boshi va menyu -->
+  <header id="tepa">
+    <nav>
+      <a class="logo" href="index.html">Oltin Qaychi</a>
+      <ul id="menyu">
+        <li><a href="index.html">Bosh sahifa</a></li>
+        <li><a href="katalog.html" aria-current="page">Katalog</a></li>
+        <li><a href="batafsil.html">Biz haqimizda</a></li>
+        <li><a href="aloqa.html">Navbat va aloqa</a></li>
+      </ul>
+      <div class="asboblar">
+        <a class="sevimli-hisob" href="katalog.html#sevimlilar" aria-label="Sevimlilar">&hearts; <span id="sevimli-soni">0</span></a>
+        <button type="button" class="ikon-tugma" id="tema-tugma" aria-label="Tungi rejimga o'tish">&#9790;</button>
+        <button type="button" class="ikon-tugma menyu-tugma" id="menyu-tugma" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="menyu">&#9776;</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <h1>Xizmatlar katalogi</h1>
+      <p>Qidiring, kategoriya bo'yicha ajrating va narx bo'yicha saralang.</p>
+    </section>
+
+    <section>
+      <h2>Statistika</h2>
+      <div class="statistika">
+        <div class="stat">
+          <p class="stat-qiymat" id="stat-jami">0</p>
+          <p class="stat-nom">Jami xizmatlar</p>
+        </div>
+        <div class="stat">
+          <p class="stat-qiymat" id="stat-ortacha">0</p>
+          <p class="stat-nom">O'rtacha narx</p>
+        </div>
+        <div class="stat">
+          <p class="stat-qiymat" id="stat-qimmat">—</p>
+          <p class="stat-nom">Eng qimmat xizmat</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="katalog">
+      <h2>Xizmatlarni tanlang</h2>
+
+      <div class="filtr-paneli">
+        <div class="maydon">
+          <label for="qidiruv">Qidiruv</label>
+          <input type="search" id="qidiruv" name="qidiruv" placeholder="Xizmat nomi...">
+        </div>
+        <div class="maydon">
+          <label for="kategoriya">Kategoriya</label>
+          <select id="kategoriya" name="kategoriya">
+            <option value="hammasi">Hammasi</option>
+          </select>
+        </div>
+        <div class="maydon">
+          <label for="tartib">Saralash</label>
+          <select id="tartib" name="tartib">
+            <option value="standart">Standart tartib</option>
+            <option value="narx-osish">Narx: arzondan qimmatga</option>
+            <option value="narx-kamayish">Narx: qimmatdan arzonga</option>
+            <option value="nom">Nom: alifbo tartibida</option>
+          </select>
+        </div>
+        <div class="belgilash">
+          <input type="checkbox" id="faqat-sevimli" name="faqat-sevimli">
+          <label for="faqat-sevimli">Faqat sevimlilar</label>
+        </div>
+      </div>
+
+      <p>Ko'rsatilmoqda: <strong id="soni">0</strong> ta xizmat</p>
+
+      <div class="kartalar" id="konteyner"></div>
+      <p class="bosh-xabar" id="bosh-xabar" hidden>Hech narsa topilmadi</p>
+    </section>
+
+    <!-- Modal oyna: ichi JavaScript bilan to'ldiriladi -->
+    <div class="modal" id="modal" hidden>
+      <div class="modal-oyna" role="dialog" aria-modal="true" aria-labelledby="modal-sarlavha">
+        <button type="button" class="modal-yopish" id="modal-yopish" aria-label="Yopish">&times;</button>
+        <img id="modal-rasm" src="rasmlar/soch.svg" alt="" width="400" height="250">
+        <h2 id="modal-sarlavha"></h2>
+        <p id="modal-tavsif"></p>
+        <dl id="modal-malumot"></dl>
+        <a class="tugma" href="aloqa.html#forma">Navbatga yozilish</a>
+      </div>
+    </div>
+
+  </main>
+
+  <a class="yuqoriga" href="#tepa">&uarr; Yuqoriga</a>
+
+  <!-- Sahifa oxiri -->
+  <footer>
+    <div class="konteyner footer-qator">
+      <div>
+        <p><strong>Oltin Qaychi sartaroshxonasi</strong></p>
+        <p>Urganch shahri, Al-Xorazmiy ko'chasi, 12-uy</p>
+        <p>Har kuni 09:00 – 20:00</p>
+      </div>
+      <div>
+        <p>Telefon: <a href="tel:+998620000000">+998 62 000 00 00</a></p>
+        <p>Pochta: <a href="mailto:info@oltinqaychi.uz">info@oltinqaychi.uz</a></p>
+        <p>&copy; 2026 Barcha huquqlar himoyalangan.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/katalog.js"></script>
+</body>
+</html>

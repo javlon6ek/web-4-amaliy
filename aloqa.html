@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Oltin Qaychi sartaroshxonasiga navbatga yozilish formasi, manzil va aloqa ma'lumotlari.">
+  <title>Navbat va aloqa — Oltin Qaychi sartaroshxonasi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sahifa boshi va menyu -->
+  <header id="tepa">
+    <nav>
+      <a class="logo" href="index.html">Oltin Qaychi</a>
+      <ul id="menyu">
+        <li><a href="index.html">Bosh sahifa</a></li>
+        <li><a href="katalog.html">Katalog</a></li>
+        <li><a href="batafsil.html">Biz haqimizda</a></li>
+        <li><a href="aloqa.html" aria-current="page">Navbat va aloqa</a></li>
+      </ul>
+      <div class="asboblar">
+        <a class="sevimli-hisob" href="katalog.html#sevimlilar" aria-label="Sevimlilar">&hearts; <span id="sevimli-soni">0</span></a>
+        <button type="button" class="ikon-tugma" id="tema-tugma" aria-label="Tungi rejimga o'tish">&#9790;</button>
+        <button type="button" class="ikon-tugma menyu-tugma" id="menyu-tugma" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="menyu">&#9776;</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <h1>Navbatga yozilish va aloqa</h1>
+      <p>Formani to'ldiring, usta vaqtni tasdiqlash uchun siz bilan bog'lanadi.</p>
+    </section>
+
+    <div class="tarkib">
+      <section class="asosiy-qism" id="forma">
+        <h2>Navbat formasi</h2>
+        <form class="forma" id="navbat-forma" method="post" novalidate>
+
+          <div class="maydon">
+            <label for="ism">Ismingiz *</label>
+            <input type="text" id="ism" name="ism" placeholder="Masalan, Bobur" aria-describedby="xato-ism">
+            <p class="xato" id="xato-ism" aria-live="polite"></p>
+          </div>
+
+          <div class="maydon">
+            <label for="telefon">Telefon raqamingiz *</label>
+            <input type="tel" id="telefon" name="telefon" placeholder="+998901234567" aria-describedby="xato-telefon">
+            <p class="xato" id="xato-telefon" aria-live="polite"></p>
+          </div>
+
+          <div class="maydon">
+            <label for="pochta">Elektron pochta</label>
+            <input type="email" id="pochta" name="pochta" placeholder="ism@pochta.uz" aria-describedby="xato-pochta">
+            <p class="xato" id="xato-pochta" aria-live="polite"></p>
+          </div>
+
+          <div class="maydon">
+            <label for="xizmat">Xizmat turi</label>
+            <select id="xizmat" name="xizmat">
+              <option value="soch-erkak">Erkaklar soch turmagi — 40 000 so'm</option>
+              <option value="soch-bola">Bolalar soch turmagi — 30 000 so'm</option>
+              <option value="mashinka">Mashinkada qisqa olish — 25 000 so'm</option>
+              <option value="soqol-shakl">Soqolni shakllantirish — 25 000 so'm</option>
+              <option value="ustara">Ustara bilan olish — 30 000 so'm</option>
+              <option value="kombo">Soch + soqol kombo — 52 000 so'm</option>
+            </select>
+          </div>
+
+          <div class="maydon">
+            <label for="sana">Sana *</label>
+            <input type="date" id="sana" name="sana" aria-describedby="xato-sana">
+            <p class="xato" id="xato-sana" aria-live="polite"></p>
+          </div>
+
+          <div class="maydon">
+            <label for="vaqt">Qulay vaqt</label>
+            <select id="vaqt" name="vaqt">
+              <option value="09">09:00</option>
+              <option value="11">11:00</option>
+              <option value="13">13:00</option>
+              <option value="15">15:00</option>
+              <option value="17">17:00</option>
+              <option value="19">19:00</option>
+            </select>
+          </div>
+
+          <div class="maydon">
+            <label for="soni">Necha kishi</label>
+            <input type="number" id="soni" name="soni" min="1" max="4" value="1">
+          </div>
+
+          <fieldset>
+            <legend>Usta tanlang</legend>
+            <div class="radio-qator">
+              <label for="usta-akmal"><input type="radio" id="usta-akmal" name="usta" value="akmal"> Akmal</label>
+              <label for="usta-javlon"><input type="radio" id="usta-javlon" name="usta" value="javlon"> Javlon</label>
+              <label for="usta-sardor"><input type="radio" id="usta-sardor" name="usta" value="sardor"> Sardor</label>
+              <label for="usta-farqi"><input type="radio" id="usta-farqi" name="usta" value="farqi-yoq" checked> Farqi yo'q</label>
+            </div>
+          </fieldset>
+
+          <div class="maydon">
+            <label for="izoh">Qo'shimcha izoh (300 belgigacha)</label>
+            <textarea id="izoh" name="izoh" rows="4" placeholder="Masalan, qanday soch turmagi kerakligini yozing" aria-describedby="xato-izoh"></textarea>
+            <p class="xato" id="xato-izoh" aria-live="polite"></p>
+          </div>
+
+          <div class="maydon">
+            <div class="belgilash">
+              <input type="checkbox" id="rozilik" name="rozilik" aria-describedby="xato-rozilik">
+              <label for="rozilik">Ma'lumotlarim bilan bog'lanish uchun foydalanilishiga roziman *</label>
+            </div>
+            <p class="xato" id="xato-rozilik" aria-live="polite"></p>
+          </div>
+
+          <button class="tugma" type="submit">Navbatga yozilish</button>
+          <p class="muvaffaqiyat" id="muvaffaqiyat" role="status" hidden></p>
+        </form>
+      </section>
+
+      <aside class="yon">
+        <h2>Aloqa</h2>
+        <p>Manzil: Urganch shahri, Al-Xorazmiy ko'chasi, 12-uy.</p>
+        <p>Telefon: <a href="tel:+998620000000">+998 62 000 00 00</a></p>
+        <p>Pochta: <a href="mailto:info@oltinqaychi.uz">info@oltinqaychi.uz</a></p>
+        <p class="izoh">Ish vaqti: har kuni 09:00 – 20:00.</p>
+      </aside>
+    </div>
+
+    <section>
+      <h2>Xaritada</h2>
+      <iframe title="Urganch shahri xaritasi (Google Maps)"
+              src="https://www.google.com/maps?q=Urganch&amp;output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+  </main>
+
+  <a class="yuqoriga" href="#tepa">&uarr; Yuqoriga</a>
+
+  <!-- Sahifa oxiri -->
+  <footer>
+    <div class="konteyner footer-qator">
+      <div>
+        <p><strong>Oltin Qaychi sartaroshxonasi</strong></p>
+        <p>Urganch shahri, Al-Xorazmiy ko'chasi, 12-uy</p>
+        <p>Har kuni 09:00 – 20:00</p>
+      </div>
+      <div>
+        <p>Telefon: <a href="tel:+998620000000">+998 62 000 00 00</a></p>
+        <p>Pochta: <a href="mailto:info@oltinqaychi.uz">info@oltinqaychi.uz</a></p>
+        <p>&copy; 2026 Barcha huquqlar himoyalangan.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/ui.js"></script>
+</body>
+</html>
