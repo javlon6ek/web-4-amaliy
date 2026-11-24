@@ -1,0 +1,788 @@
+/* ==========================================================
+   Oltin Qaychi sartaroshxonasi — style.css (4-amaliy ish)
+   Palitra: to'q ko'k, och fon, amber, oq (+ tungi rejim)
+   ========================================================== */
+
+/* ---------- 1. Blok modeli ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- 2. Rang o'zgaruvchilari ---------- */
+:root {
+  --asosiy: #1f3a5f;                     /* to'q ko'k */
+  --fon: #eef2f6;                        /* sahifa foni */
+  --aksent: #8a5a00;                     /* amber (fon sifatida) */
+  --oq: white;
+  --matn: #1f3a5f;                       /* asosiy matn rangi */
+  --karta: white;                        /* karta va forma foni */
+  --chiziq: rgba(31, 58, 95, 0.25);
+  --aksent-matn: #8a5a00;                /* amber (matn sifatida) */
+  --yengil: rgba(31, 58, 95, 0.08);
+  --korilgan: rgba(31, 58, 95, 0.7);     /* ko'rilgan havola */
+  --xato: #a11d1d;                       /* forma xatosi */
+}
+
+/* Tungi rejim: ranglar shu yerda almashadi */
+[data-tema="tungi"] {
+  --fon: #101c2e;
+  --matn: #e8eef5;
+  --karta: #182a43;
+  --chiziq: rgba(255, 255, 255, 0.25);
+  --aksent-matn: #e3b25a;
+  --yengil: rgba(255, 255, 255, 0.07);
+  --korilgan: rgba(232, 238, 245, 0.7);
+  --xato: #ff9a9a;
+  color-scheme: dark;
+}
+
+/* ---------- 3. Umumiy ---------- */
+body {
+  margin: 0;
+  background-color: var(--fon);
+  color: var(--matn);
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+body.modal-ochiq {
+  overflow: hidden;
+}
+
+main,
+.konteyner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- 4. Sarlavhalar ---------- */
+h1 {
+  margin: 0 0 12px;
+  font-family: 'Roboto Slab', Georgia, serif;
+  font-size: clamp(1.7rem, 6vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+h2, h3 {
+  font-family: 'Roboto Slab', Georgia, serif;
+  line-height: 1.3;
+  color: var(--matn);
+}
+
+h2 {
+  margin: 40px 0 16px;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ---------- 5. Matn ---------- */
+.izoh {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+mark {
+  background-color: rgba(138, 90, 0, 0.25);
+  color: var(--matn);
+}
+
+abbr {
+  text-decoration: underline dotted;
+}
+
+blockquote {
+  margin: 24px 0;
+  font-family: 'Roboto Slab', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--aksent-matn);
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin: 0 0 12px 24px;
+  font-style: italic;
+}
+
+/* ---------- 6. Havolalar ---------- */
+a {
+  color: var(--matn);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--korilgan);
+}
+
+a:hover {
+  color: var(--aksent-matn);
+  text-decoration: none;
+}
+
+/* ---------- 7. Sarlavha va menyu: sticky + Flexbox ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--asosiy);
+  color: var(--oq);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 12px 20px;
+}
+
+.logo,
+.logo:visited {
+  color: white;
+  font-family: 'Roboto Slab', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul a,
+nav ul a:visited {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+nav ul a:hover,
+nav ul a[aria-current="page"] {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Menyu yonidagi asboblar: sevimlilar, tema, hamburger */
+.asboblar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sevimli-hisob,
+.sevimli-hisob:visited {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sevimli-hisob:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.ikon-tugma {
+  padding: 4px 10px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.ikon-tugma:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.menyu-tugma {
+  display: none;
+}
+
+/* ---------- 8. Hero: ikki o'qda markazlash ---------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  min-height: 240px;
+  margin-top: 24px;
+  padding: 32px 24px;
+  background-color: var(--karta);
+  border: 1px solid var(--chiziq);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.hero p {
+  margin: 0;
+}
+
+.hero-tugmalar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* ---------- 9. Kartalar ---------- */
+.kartalar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 20px;
+}
+
+.karta {
+  position: relative;
+  flex: 1 1 280px;
+  margin: 0 0 20px;
+  padding: 20px 24px;
+  background-color: var(--karta);
+  border: 1px solid var(--chiziq);
+  border-radius: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.karta:hover {
+  border-color: var(--aksent-matn);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.belgi {
+  position: absolute;
+  top: -12px;
+  right: 16px;
+  padding: 2px 12px;
+  background-color: var(--aksent);
+  color: var(--oq);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Katalog kartalari: 1 ta natija ham cho'zilib ketmasin */
+.katalog .karta {
+  flex: 1 1 260px;
+  max-width: 320px;
+}
+
+.karta-rasm {
+  width: 100%;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.karta-narx {
+  margin: 0;
+  font-weight: 700;
+  color: var(--aksent-matn);
+}
+
+.teglar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.teg {
+  padding: 0 10px;
+  border: 1px solid var(--chiziq);
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+.karta-tugmalar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* ---------- 10. Asosiy qism + aside ---------- */
+.tarkib {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.asosiy-qism {
+  flex: 2 1 480px;
+  min-width: 0;
+}
+
+.yon {
+  flex: 1 1 240px;
+  align-self: flex-start;
+  margin-top: 40px;
+  padding: 16px 20px;
+  background-color: rgba(138, 90, 0, 0.12);
+  border-left: 4px solid var(--aksent);
+  border-radius: 8px;
+}
+
+.yon h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+/* ---------- 11. Jadval ---------- */
+.jadval-orami {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--karta);
+}
+
+caption {
+  padding: 8px 0;
+  font-weight: 700;
+  text-align: left;
+}
+
+th, td {
+  padding: 10px 14px;
+  border: 1px solid var(--chiziq);
+  text-align: left;
+}
+
+thead th {
+  background-color: var(--asosiy);
+  color: var(--oq);
+  letter-spacing: 1px;
+}
+
+tbody th {
+  background-color: var(--yengil);
+}
+
+.narx {
+  text-align: right;
+  white-space: nowrap;
+}
+
+tbody tr:hover td {
+  background-color: rgba(138, 90, 0, 0.12);
+}
+
+/* ---------- 12. Rasmlar ---------- */
+.galereya {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+figure {
+  flex: 1 1 280px;
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--karta);
+  border: 1px solid var(--chiziq);
+  border-radius: 12px;
+}
+
+figcaption {
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* ---------- 13. Statistika va filtr paneli (katalog) ---------- */
+.statistika {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.stat {
+  flex: 1 1 200px;
+  padding: 16px 20px;
+  background-color: var(--karta);
+  border: 1px solid var(--chiziq);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.stat-qiymat {
+  margin: 0;
+  font-family: 'Roboto Slab', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--aksent-matn);
+}
+
+.stat-nom {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+}
+
+.filtr-paneli {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding: 16px 20px;
+  background-color: var(--karta);
+  border: 1px solid var(--chiziq);
+  border-radius: 12px;
+}
+
+.filtr-paneli .maydon {
+  flex: 1 1 200px;
+}
+
+.bosh-xabar {
+  padding: 24px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* ---------- 14. Forma ---------- */
+.forma {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background-color: var(--karta);
+  border: 1px solid var(--chiziq);
+  border-radius: 12px;
+}
+
+.maydon {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-weight: 700;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--chiziq);
+  border-radius: 6px;
+  background-color: var(--karta);
+  color: var(--matn);
+  font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus-visible {
+  outline: 2px solid var(--aksent-matn);
+}
+
+fieldset {
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--chiziq);
+  border-radius: 8px;
+}
+
+legend {
+  padding: 0 8px;
+  font-weight: 700;
+}
+
+.radio-qator {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+.radio-qator label,
+.belgilash label {
+  font-weight: 400;
+}
+
+.belgilash {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Forma xatolari va muvaffaqiyat xabari */
+.xato {
+  margin: 0;
+  color: var(--xato);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+[aria-invalid="true"] {
+  border-color: var(--xato);
+}
+
+.muvaffaqiyat {
+  margin: 0;
+  padding: 12px 16px;
+  background-color: rgba(138, 90, 0, 0.18);
+  border-left: 4px solid var(--aksent);
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* ---------- 15. Tugmalar va «Yuqoriga» ---------- */
+.tugma,
+.tugma:visited {
+  display: inline-block;
+  padding: 10px 22px;
+  background-color: var(--aksent);
+  color: var(--oq);
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tugma:hover {
+  background-color: var(--asosiy);
+  color: var(--oq);
+}
+
+.sevimli-tugma {
+  padding: 8px 14px;
+  background-color: transparent;
+  color: var(--aksent-matn);
+  border: 1px solid var(--aksent-matn);
+  border-radius: 8px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.sevimli-tugma:hover,
+.sevimli-tugma[aria-pressed="true"] {
+  background-color: var(--aksent);
+  color: var(--oq);
+  border-color: var(--aksent);
+}
+
+.yuqoriga,
+.yuqoriga:visited {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 90;
+  padding: 10px 16px;
+  background-color: var(--asosiy);
+  color: var(--oq);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.yuqoriga:hover {
+  background-color: var(--aksent);
+  color: var(--oq);
+}
+
+/* ---------- 16. Modal oyna ---------- */
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal-oyna {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+  background-color: var(--karta);
+  color: var(--matn);
+  border: 1px solid var(--chiziq);
+  border-radius: 12px;
+}
+
+.modal-oyna h2 {
+  margin: 16px 0 8px;
+  font-size: 1.4rem;
+}
+
+.modal-yopish {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  padding: 0 8px;
+  background: none;
+  color: var(--matn);
+  border: 0;
+  font-size: 2rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.modal-yopish:hover {
+  color: var(--aksent-matn);
+}
+
+.modal-oyna dl {
+  margin: 16px 0;
+}
+
+.modal-oyna dl > div {
+  display: flex;
+  gap: 12px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--chiziq);
+}
+
+.modal-oyna dt {
+  flex: 0 0 110px;
+}
+
+.modal-oyna dd {
+  margin: 0;
+  font-style: normal;
+}
+
+/* ---------- 17. Footer ---------- */
+footer {
+  margin-top: 48px;
+  padding: 24px 0;
+  background-color: var(--asosiy);
+  color: var(--oq);
+  font-size: 0.95rem;
+}
+
+.footer-qator {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px 40px;
+}
+
+.footer-qator p {
+  margin: 0 0 6px;
+}
+
+footer a,
+footer a:visited {
+  color: white;
+}
+
+footer a:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---------- 18. Telefon uchun ---------- */
+@media (max-width: 700px) {
+  .menyu-tugma {
+    display: inline-block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    order: 3;
+  }
+
+  nav ul.ochiq {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+
+  .hero {
+    min-height: 200px;
+  }
+
+  .forma {
+    padding: 16px;
+  }
+
+  th, td {
+    padding: 8px 10px;
+  }
+
+  .katalog .karta {
+    max-width: none;
+  }
+}
