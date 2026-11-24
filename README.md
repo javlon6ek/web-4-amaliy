@@ -1,4 +1,4 @@
-# 4-amaliy ish — Semestr loyihasini JavaScript bilan jonlantirish
+# 4-amaliy ish
 
 **Talaba:** Qurbonov Javlonbek
 **Guruh:** 941-24
